@@ -19,7 +19,7 @@
   <img src="logo.webp" alt="Logotipo" style="max-width: 100px; border-radius: 8px;">
 </div>
 <div class="calculator">
-  <h3 align=center>El precio de una lápida de porcelanato con grabado láser para socios comerciales</h3>
+  <h3 align=center>El precio de una lápida de porcelanato con grabado láser</h3>
   <div class="input-field form-group">
     <label for="width">Ancho (cm): </label>
     <input type="number" id="width" placeholder="Introduce el ancho" class="form-control">
@@ -71,15 +71,15 @@ function calculateDiscount(width, height) {
 function calculate() {
     let width = parseFloat(document.getElementById("width").value);
     let height = parseFloat(document.getElementById("height").value);
-    if (width < 10 || height < 10 || width > 80 || height > 80) {
-        document.getElementById("result").innerHTML = "Las dimensiones deben estar entre 10 cm y 80 cm.";
+    if (width < 10 || height < 10 || (!(width <= 60 && height <= 120) && !(width <= 120 && height <= 60)) {
+        document.getElementById("result").innerHTML = "Las dimensiones deben estar entre 10 cm y 120x60 cm.";
         return;
     }
-    if (width > 60 || height > 60) {
-        document.getElementById("warning").innerHTML = "Advertencia: Para dimensiones mayores a 60 cm, solo se pueden fabricar lápidas blancas. Las lápidas negras están limitadas a dimensiones de 60x60 cm.";
-    } else {
-        document.getElementById("warning").innerHTML = ""; // Limpiar advertencia si no es aplicable
-    }
+    // if (width > 60 || height > 60) {
+    //     document.getElementById("warning").innerHTML = "Advertencia: Para dimensiones mayores a 60 cm, solo se pueden fabricar lápidas blancas. Las lápidas negras están limitadas a dimensiones de 60x60 cm.";
+    // } else {
+    //     document.getElementById("warning").innerHTML = ""; // Limpiar advertencia si no es aplicable
+    // }
 
     let basePrice = calculateEngravingPrice(width, height);
     let discountPercentage = calculateDiscount(width, height);
