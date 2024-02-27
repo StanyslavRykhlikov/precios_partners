@@ -75,11 +75,11 @@ function calculate() {
         document.getElementById("result").innerHTML = "Las dimensiones deben estar entre 10 cm y 120x60 cm.";
         return;
     }
-    // if (width > 60 || height > 60) {
-    //     document.getElementById("warning").innerHTML = "Advertencia: Para dimensiones mayores a 60 cm, solo se pueden fabricar lápidas blancas. Las lápidas negras están limitadas a dimensiones de 60x60 cm.";
-    // } else {
-    //     document.getElementById("warning").innerHTML = ""; // Limpiar advertencia si no es aplicable
-    // }
+    if (width > 120 || height > 120) {
+        document.getElementById("warning").innerHTML = "Advertencia: Para dimensiones mayores a 60 cm, solo se pueden fabricar lápidas blancas. Las lápidas negras están limitadas a dimensiones de 60x60 cm.";
+    } else {
+        document.getElementById("warning").innerHTML = ""; // Limpiar advertencia si no es aplicable
+    }
 
     let basePrice = calculateEngravingPrice(width, height);
     let discountPercentage = calculateDiscount(width, height);
