@@ -71,7 +71,7 @@ function calculateDiscount(width, height) {
 function calculate() {
     let width = parseFloat(document.getElementById("width").value);
     let height = parseFloat(document.getElementById("height").value);
-    if (width < 10 || height < 10 || (!(width <= 60 && height <= 120) && !(width <= 120 && height <= 60)) {
+    if (width < 10 || height < 10 || (!(width <= 60 && height <= 120) && !(width <= 120 && height <= 60))) {
         document.getElementById("result").innerHTML = "Las dimensiones deben estar entre 10 cm y 120x60 cm.";
         return;
     }
