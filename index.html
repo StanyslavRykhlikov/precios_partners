@@ -44,7 +44,7 @@ document.getElementById("height").addEventListener("input", updateButtonState);
 
 function calculateEngravingPrice(width, height) {
     const coefficients = [-2.32213774e-16, 3.36758149e-12, -1.63092405e-08, 2.73223112e-05, 4.21952492e-02, 29.7102897];
-    let area = width * height;
+    let area = Math.min(width * height, 6400);
     let price = 0;
     coefficients.forEach((coeff, i) => {
         price += coeff * Math.pow(area, 5 - i);
