@@ -86,8 +86,8 @@ function calculate() {
     let discountAmount = basePrice * (discountPercentage / 100);
     let finalPrice = basePrice - discountAmount;
 
-    //document.getElementById("result").innerHTML = `Precio: $${basePrice}<br>Descuento: ${discountPercentage}%<br>Precio final: $${finalPrice.toFixed(2)}`;
-    document.getElementById("result").innerHTML = `Precio: $${basePrice}`;
+    document.getElementById("result").innerHTML = `Precio: $${basePrice}<br>Descuento: ${discountPercentage}%<br>Descuento en dinero: $${discountAmount}`;
+    // document.getElementById("result").innerHTML = `Precio: $${basePrice}`;
 }
 document.addEventListener("DOMContentLoaded", updateButtonState);
 </script>
